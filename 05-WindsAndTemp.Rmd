@@ -1,0 +1,36 @@
+---
+title: "WindsAndTemps"
+author: "Charlie"
+date: "3/25/2020"
+output: pdf_document
+---
+
+
+```{r echo=FALSE, code = readLines("scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' }
+# execute the script but suppress all output
+# basically this puts the script in memory so it can used later
+```
+
+Now let's break up the code in RMD...
+
+A Histogram of the change in temperature for the 366 days.  
+If you still want to view the code in the output file then  you need to use the r block
+
+```{r echo=TRUE}
+  #### Plot the histogram of the change in temperature
+  plot1 = hist(changeTemp,
+               main = "Daily change of average temperatures",
+               xlab = "Change in Temperature (Fahrenheit)");
+```
+
+Boxplot for change in temperature by the prevailing wind direction.
+
+```{r echo=FALSE}
+  plot(plot2);
+```
+
+Boxplots facetting by the strength and direction of the wind
+
+```{r echo=FALSE}
+  plot(plot3);
+```

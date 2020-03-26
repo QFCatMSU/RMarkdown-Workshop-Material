@@ -1,0 +1,46 @@
+---
+title: "WindsAndTemps"
+author: "Charlie"
+date: "3/25/2020"
+output: pdf_document
+urlcolor: red
+---
+
+```{r echo=FALSE, code = readLines("scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' }
+# execute the script but suppress all output
+# basically this puts the script in memory so it can used later
+```
+
+## Images and Figures
+Link to [Figure 2](#anchor2)  
+Within a page, you can only link to a header
+Link to [QFC Website](https://www.canr.msu.edu/qfc/)  
+
+Here is an image.  If you put text in the bracets, it sometimes converts the text to a caption.  
+![](images/QFCLogo.PNG)  
+
+### Inline Code
+
+
+## Figures
+
+### {#anchor1}
+```{r echo=FALSE}
+plot(plot1)
+```
+
+Boxplot for change in temperature by the prevailing wind direction
+
+### {#anchor2}
+```{r echo=FALSE}
+plot(plot2)
+```
+
+Boxplots facetting by the strength and direction of the wind
+
+### {#anchor3}
+```{r echo=FALSE}
+plot(plot3)
+```
+
+

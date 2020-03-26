@@ -1,0 +1,44 @@
+---
+title: "WindsAndTemps"
+author: "Charlie"
+date: "3/25/2020"
+output:
+  word_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r echo=FALSE, code = readLines("scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' }
+# execute the script but suppress all output
+# basically this puts the script in memory so it can used later
+```
+
+Welcome Back! 
+Rmarkdown is fairly easy if you stick to thri limited formatting option but can quickly get complicated if you want to go beyond simple formatting. For instance, let's talk about spacing.... 
+One    thing    that   you   will    quickly notice is that Rmarkdown ignores any spaces after the first.
+
+
+
+
+
+If you want to create extra &nbsp;&nbsp;&nbsp; spaces &nbsp;&nbsp;&nbsp;, you need to explictly tell Rmarkdown by using the \&nbsp; command.  
+If you want to place a paragraph on the next line, you need to put two spaces on the previous line -- yeah, that is awkward!
+\newline \newline \newline \newline \newline
+<br> <br> <br>
+If you want to put multiple vertical spaces between two paragraph.  Sorry, but Rmarkdown does not do that.  But HTML and LaTeX do.  HTML uses the command \<br\> and LaTeX uses the command \\newline.  This paragraph will be 4 lines underneath the last in PDF, 2 line underneath in HTML, and on the same line in Word.
+
+```{r echo=FALSE, fig.height=3, fig.width=4, fig.align="left"}
+plot(plot1);
+```
+
+Boxplot for change in temperature by the prevailing wind direction
+
+```{r echo=FALSE, fig.height=4.5, fig.width=5, fig.align="right"}
+plot(plot2);
+```
+
+Boxplots facetting by the strength and direction of the wind
+
+```{r echo=FALSE, fig.height=3, fig.width=4.5, fig.align="center"}
+plot(plot3);
+```

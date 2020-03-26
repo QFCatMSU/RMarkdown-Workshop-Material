@@ -1,0 +1,69 @@
+---
+title: "WindsAndTemps"
+author: "Charlie"
+date: "3/25/2020"
+output: pdf_document
+---
+
+
+```{r}
+## keep all file references in one place at the top -- 
+## you might need to modify these or set the working directory in RMarkdown
+source(file="scripts/reference.R");  
+weatherData = read.csv(file="data/LansingWeather2016-NOAA.csv", 
+                       stringsAsFactors = FALSE);  # after R 4.0 -- this is default
+
+avgTemp = weatherData$avgTemp;  # get the avgTemp column from the data frame
+
+# create vector to hold change in temp values
+changeTemp = vector(mode = "integer", length = nrow(weatherData));
+changeTemp[1] = NA;  # there is no day before the first to calculate
+
+#### Starting with the second day, calculate the change in temperatures
+for(day in 2:nrow(weatherData))
+{
+  changeTemp[day] = avgTemp[day] - avgTemp[day-1];
+}
+weatherData$changeTemp = changeTemp;  # save vector as column in data frame
+
+#### Plot the histogram of the change in temperature (R Base Plot) - save to plot1
+plot1 = hist(changeTemp,
+             main = "Daily change of average temperatures",
+             xlab = "Change in Temperature (Fahrenheit)");
+
+#### Get and print summary statistics on the change in tempeature values
+cat("Summary statistics for the change in temperature:\n");
+print(summary(changeTemp));  
+
+#### Get and print the number of days with winds from each direction
+cat("\nNumber of days with prevailing winds from the cardinal directions:");
+print(table(weatherData$windDir));
+
+#### Create a box for each wind direction (GGPlot) -- save to plot2
+plot2 = ggplot(data=weatherData) +
+  geom_boxplot(mapping=aes(x=windDir, y=changeTemp), 
+               na.rm=TRUE) +
+  theme_bw() +
+  scale_x_discrete(limits=c("North", "East", "South", "West")) +
+  labs(title = "Change in Temperature by Prevaling Wind Direction",
+       subtitle = "Lansing, Michigan: 2016",
+       x = "Wind Direction",
+       y = "Change in Temperature (\U00B0 F)");
+plot(plot2);
+
+### Add a facet for the strength of the winds (GGPlot) -- save to plot3 
+plot3 = ggplot(data=weatherData) +
+  geom_boxplot(mapping=aes(x=windSpeedLevel, y=changeTemp), 
+               na.rm=TRUE,
+               color="gray20",
+               fill="gray70") +
+  theme_bw() +
+  scale_x_discrete(limits=c("Low", "Medium", "High")) +
+  facet_grid(facets=.~factor(windDir,
+                      levels=c("North", "East", "South", "West"))) +
+  labs(title = "Change in Temperature by Wind Direction and Speed",
+       subtitle = "Lansing, Michigan: 2016",
+       x = "Wind Speed levels within each Wind Direction",
+       y = "Change in Temperature (\U00B0 F)");
+plot(plot3);
+```
