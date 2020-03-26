@@ -6,12 +6,10 @@ output: pdf_document
 urlcolor: red
 ---
 
-<!--
-```{r echo=FALSE,code = readLines("scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' } 
+<!--```{r echo=FALSE,code = readLines("scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' } 
 # execute the script but suppress all output
 # basically this puts the script in memory so it can used later
-```
--->
+```-->
 
 ```{r echo=FALSE,warning=FALSE, message=FALSE, results="hide", fig.show='hide',code = readLines("https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/scripts/01-WindsAndTemps.R"),  }
 # execute the script but suppress all output
@@ -24,7 +22,8 @@ Within a page, you can only link to a header
 Link to [QFC Website](https://www.canr.msu.edu/qfc/)  
 
 Here is an image.  If you put text in the bracets, it sometimes converts the text to a caption.  
-![](images/QFCLogo.PNG)  
+<!-- ![](images/QFCLogo.PNG) -->
+![](https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/images/QFCLogo.png)
 
 ### Inline Code
 
