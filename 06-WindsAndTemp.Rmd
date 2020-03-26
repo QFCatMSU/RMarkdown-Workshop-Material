@@ -2,12 +2,17 @@
 title: "WindsAndTemps"
 author: "Charlie"
 date: "3/25/2020"
-output:
-  html_document:
-    df_print: paged
+output: pdf_document
 ---
 
-```{r echo=FALSE, code = readLines("scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' }
+<!--
+```{r echo=FALSE,code = readLines("scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' } 
+# execute the script but suppress all output
+# basically this puts the script in memory so it can used later
+```
+-->
+
+```{r echo=FALSE,warning=FALSE, message=FALSE, results="hide", fig.show='hide',code = readLines("https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/scripts/01-WindsAndTemps.R"),  }
 # execute the script but suppress all output
 # basically this puts the script in memory so it can used later
 ```
