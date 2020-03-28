@@ -9,22 +9,18 @@ output:
   word_document: default
 ---
 
-Now let's break up the code in RMD...
-<!-- Set up for the document -- no echo.  Oh, and this is a comment! -->
+Now let's break up the code in RMD... Note: you should keep an extra line between the document text and the code -- otherwise spacing can get weird... 
 
 ```{r echo=FALSE}
-## keep all file references in one place at the top -- 
-## you might need to modify these or set the working directory in RMarkdown
-
-#### Local links -- work if in RStudio Project
-# source(file="scripts/reference.R");
-# weatherData = read.csv(file="data/LansingWeather2016-NOAA.csv",
-#                        stringsAsFactors = FALSE);
-
-#### Links to the GitHub files -- same files as above
-source(file="https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/scripts/reference.r");  
-weatherData = read.csv(file="https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/data/LansingWeather2016-NOAA.csv",
+### Local links -- work if in RStudio Project
+source(file="scripts/reference.R");
+weatherData = read.csv(file="data/LansingWeather2016-NOAA.csv",
                        stringsAsFactors = FALSE);
+
+# #### Links to the GitHub files -- same files as above
+# source(file="https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/scripts/reference.r");  
+# weatherData = read.csv(file="https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/data/LansingWeather2016-NOAA.csv",
+#                        stringsAsFactors = FALSE);
 
 avgTemp = weatherData$avgTemp;  # get the avgTemp column from the data frame
 
@@ -49,7 +45,7 @@ plot1 = hist(changeTemp,
              xlab = "Change in Temperature (Fahrenheit)");
 ```
 
-<!-- Don't want this in the final document -->
+<!-- Don't want this in the final document.  Oh, and this is a comment in RMD -->
 
 ```{r echo=FALSE, eval=FALSE}
 #### Get some statistics on the change in tempeature values
@@ -62,7 +58,6 @@ print(table(weatherData$windDir));
 ```
 
 Boxplot for change in temperature by the prevailing wind direction
-<!-- You need the extra space here or the output gets weird! -->
 
 ```{r echo=FALSE, eval=TRUE}
 #### GGPlot: Create a box for each wind direction 
@@ -96,3 +91,5 @@ plot3 = ggplot(data=weatherData) +
        y = "Change in Temperature (\U00B0 F)");
 plot(plot3);
 ```
+
+While there is convenience in breaking up code in RMD, the big issue is that it is harder to develop and debug code in RMD -- we will take care of that in the next example.

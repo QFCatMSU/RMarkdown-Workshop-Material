@@ -5,15 +5,11 @@ date: "3/25/2020"
 output: pdf_document
 ---
 
-<!--```{r echo=FALSE,code = readLines("scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' } 
-# execute the script but suppress all output
-# basically this puts the script in memory so it can used later
-```-->
-
-```{r echo=FALSE,warning=FALSE, message=FALSE, results="hide", fig.show='hide',code = readLines("https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/scripts/01-WindsAndTemps.R"),  }
-# execute the script but suppress all output
-# basically this puts the script in memory so it can used later
+```{r echo=FALSE,code = readLines("scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' } 
 ```
+
+<!--```{r echo=FALSE,warning=FALSE, message=FALSE, results="hide", fig.show='hide',code = readLines("https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/scripts/01-WindsAndTemps.R"),  }
+```-->
 
 Welcome Back! 
 Rmarkdown is fairly easy if you stick to thri limited formatting option but can quickly get complicated if you want to go beyond simple formatting. For instance, let's talk about spacing.... 

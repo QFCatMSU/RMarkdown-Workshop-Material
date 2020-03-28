@@ -1,16 +1,15 @@
 ## keep all file references in one place at the top -- 
 ## you might need to modify these or set the working directory in RMarkdown
 
-#### Local links -- work if in RStudio Project
-# source(file="scripts/reference.R");
-# weatherData = read.csv(file="data/LansingWeather2016-NOAA.csv",
-#                        stringsAsFactors = FALSE);
-
-#### Links to the GitHub files -- same files as above
-source(file="https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/scripts/reference.r");  
-weatherData = read.csv(file="https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/data/LansingWeather2016-NOAA.csv",
+### Local links -- work if in RStudio Project
+source(file="scripts/reference.R");
+weatherData = read.csv(file="data/LansingWeather2016-NOAA.csv",
                        stringsAsFactors = FALSE);
 
+# #### Links to the GitHub files -- same files as above
+# source(file="https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/scripts/reference.r");  
+# weatherData = read.csv(file="https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/data/LansingWeather2016-NOAA.csv",
+#                        stringsAsFactors = FALSE);
 
 avgTemp = weatherData$avgTemp;  # get the avgTemp column from the data frame
 
