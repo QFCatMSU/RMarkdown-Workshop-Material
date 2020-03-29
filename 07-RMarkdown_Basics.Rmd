@@ -2,7 +2,10 @@
 title: "WindsAndTemps"
 author: "Charlie"
 date: "3/25/2020"
-output: pdf_document
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
 ---
 
 ```{r echo=FALSE,code = readLines("scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' } 
@@ -10,6 +13,11 @@ output: pdf_document
 
 <!--```{r echo=FALSE,warning=FALSE, message=FALSE, results="hide", fig.show='hide',code = readLines("https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/scripts/01-WindsAndTemps.R"),  }
 ```-->
+
+&#x11E;
+as^$\pi$^sd
+$\alpha$
+$\beta$
 
 ## Now, we really get into Rmarkdown! 
 
