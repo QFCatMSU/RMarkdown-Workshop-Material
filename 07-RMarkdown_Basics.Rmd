@@ -14,11 +14,6 @@ output:
 <!--```{r echo=FALSE,warning=FALSE, message=FALSE, results="hide", fig.show='hide',code = readLines("https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/scripts/01-WindsAndTemps.R"),  }
 ```-->
 
-&#x11E;
-as^$\pi$^sd
-$\alpha$
-$\beta$
-
 ## Now, we really get into Rmarkdown! 
 
 ### Headers
@@ -70,3 +65,12 @@ Boxplots facetting by the strength and direction of the wind
 ```{r echo=FALSE, fig.height=3, fig.width=4.5, fig.align="center"}
 plot(plot3);
 ```
+
+### Greek Letters (using LaTeX)
+alpha: $\alpha$  
+beta: $\beta$  
+gamma: $\gamma$  
+
+### Add color to your text  
+This <span style="color:blue;"> is blue only </span> in HTML  
+This \textcolor{red}{is red only} in PDF

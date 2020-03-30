@@ -4,6 +4,7 @@ author: "Charlie"
 date: "3/25/2020"
 output: pdf_document
 urlcolor: red
+textcolor: blue
 ---
 
 ```{r echo=FALSE,code = readLines("scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' } 

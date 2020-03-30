@@ -45,7 +45,7 @@ plot1 = hist(changeTemp,
              xlab = "Change in Temperature (Fahrenheit)");
 ```
 
-<!-- Don't want this in the final document.  Oh, and this is a comment in RMD -->
+<!-- Hey, this is a comment in Rmd -->
 
 ```{r echo=FALSE, eval=FALSE}
 #### Get some statistics on the change in tempeature values
