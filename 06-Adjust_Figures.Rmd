@@ -5,25 +5,21 @@ date: "3/25/2020"
 output: pdf_document
 ---
 
+We can control the output of the plots a little bit using fig.height, fig.width, and fig.align.  Height and width are given in inches.
+
 ```{r echo=FALSE,code = readLines("scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' } 
-# execute the script but suppress all output
-# basically this puts the script in memory so it can used later
+# execute the script but suppresses all output
+# basically this puts the script in memory (i.e., the Environment) so it can be used later
 ```
 
 <!--```{r echo=FALSE,warning=FALSE, message=FALSE, results="hide", fig.show='hide',code = readLines("https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/scripts/01-WindsAndTemps.R"),  }
-# execute the script but suppress all output
-# basically this puts the script in memory so it can used later
+# Use if above does not work...
 ```-->
-
-We can control the output of the plots a little bit using fig.height, fig.width, and fig.align.  Height and width are given in inches
 
 A Histogram of the change in temperature for the 366 days
 <!-- need to duplicate code if you want the code printed to the document -->
-```{r echo=TRUE, fig.height=3, fig.width=4, fig.align="left"}
-  #### Plot the histogram of the change in temperature
-  plot1 = hist(changeTemp,
-               main = "Daily change of average temperatures",
-               xlab = "Change in Temperature (Fahrenheit)");
+```{r echo=FALSE, fig.height=6, fig.width=4, fig.align="left"}
+plot(plot1);
 ```
 
 Boxplot for change in temperature by the prevailing wind direction
@@ -32,7 +28,7 @@ Boxplot for change in temperature by the prevailing wind direction
 plot(plot2);
 ```
 
-Boxplots facetting by the strength and direction of the wind
+Boxplots faceting by the strength and direction of the wind
 
 ```{r echo=FALSE, fig.height=3, fig.width=4.5, fig.align="center"}
 plot(plot3);

@@ -14,13 +14,12 @@ output: pdf_document
 ## Adding inline code and output to your document
 
 ### Inline Code
-If you want to execute and display the value of R code, then you use one apostrophe. For instance you can output the high temperature on the 100th day of the year: `r weatherData$maxTemp[100];` or the first ten values of the average temperatures `r avgTemp[1:10];`.
+If you want to execute R code and output values to the document, then you use one apostrophe with an "r". For instance you can output the high temperature on the 100th day of the year: `r weatherData$maxTemp[100];` or the first ten values of the average temperature vector `r avgTemp[1:10];`.
 
-You can put in more complex command like the mean of the change in temperature is: `r mean(changeTemp, na.rm=TRUE);`.  The highest change in temperature was `r max(changeTemp, na.rm=TRUE);`.  Or even put in mutiple command -- the high temperature occurred on the day `r maxDayNum = which.max(changeTemp); maxDayNum;`, which is `r maxDay = weatherData$date[maxDayNum]; maxDay;`.  Or, written out, that day is `r maxDay2 = as.Date(maxDay, format="%m-%d"); format(maxDay2, format="%B %d");`
+You can put in more complex commands.  The mean of the change in temperature is: `r mean(changeTemp, na.rm=TRUE);`.  The highest change in temperature was `r max(changeTemp, na.rm=TRUE);`.  Or even put in multiple command -- the high temperature occurred on the day `r maxDayNum = which.max(changeTemp); maxDayNum;`, which is `r maxDay = weatherData$date[maxDayNum]; maxDay;`.  Or, written out is long format, that day is `r maxDay2 = as.Date(maxDay, format="%m-%d"); format(maxDay2, format="%B %d");`
 
 ## Code text format  
-If you do not procede the code with an r, then RMD will display it as code text: `this will be displayed as code text`, which means it will be displayed, rather than executed, in a monospaced format (all characters have the same width)
-
+If you do not precede the code with an "r", then RMD will display it as code text: `this will be displayed as code text`, which means it will be displayed, rather than executed, in a monospaced format (all characters have the same width)
 
 
 ```{r echo=FALSE, fig.height=3, fig.width=4, fig.align="left"}
@@ -33,7 +32,7 @@ Boxplot for change in temperature by the prevailing wind direction
 plot(plot2);
 ```
 
-Boxplots facetting by the strength and direction of the wind
+Boxplots faceting by the strength and direction of the wind
 
 ```{r echo=FALSE, fig.height=3, fig.width=4.5, fig.align="center"}
 plot(plot3);

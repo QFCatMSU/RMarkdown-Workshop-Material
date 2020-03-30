@@ -14,7 +14,8 @@ source(file="scripts/reference.R");
 weatherData = read.csv(file="data/LansingWeather2016-NOAA.csv",
                        stringsAsFactors = FALSE);
 
-# #### Links to the GitHub files -- same files as above
+# #### Links to the same files on GitHub 
+#      uncomment in case of emergency (and comment above links)
 # source(file="https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/scripts/reference.r");  
 # weatherData = read.csv(file="https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/data/LansingWeather2016-NOAA.csv",
 #                        stringsAsFactors = FALSE);
@@ -51,7 +52,7 @@ plot2 = ggplot(data=weatherData) +
                na.rm=TRUE) +
   theme_bw() +
   scale_x_discrete(limits=c("North", "East", "South", "West")) +
-  labs(title = "Change in Temperature by Prevaling Wind Direction",
+  labs(title = "Change in Temperature by Prevailing Wind Direction",
        subtitle = "Lansing, Michigan: 2016",
        x = "Wind Direction",
        y = "Change in Temperature (\U00B0 F)");

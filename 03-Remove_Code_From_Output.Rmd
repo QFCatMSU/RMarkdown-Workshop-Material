@@ -5,8 +5,7 @@ date: "3/25/2020"
 output: pdf_document
 ---
 
-
-Let's add some text to this document and remove the code with echo=FALSE.  This only removes the code not the output -- so the plots and Console.
+Let's add some text to beginning of this document and remove the code from the output using echo=FALSE. This removes the code but not the plots or the Console output. 
 
 ```{r echo=FALSE}
 ### Local links -- work if in RStudio Project
@@ -51,7 +50,7 @@ plot2 = ggplot(data=weatherData) +
                na.rm=TRUE) +
   theme_bw() +
   scale_x_discrete(limits=c("North", "East", "South", "West")) +
-  labs(title = "Change in Temperature by Prevaling Wind Direction",
+  labs(title = "Change in Temperature by Prevailing Wind Direction",
        subtitle = "Lansing, Michigan: 2016",
        x = "Wind Direction",
        y = "Change in Temperature (\U00B0 F)");
@@ -73,3 +72,5 @@ plot3 = ggplot(data=weatherData) +
        y = "Change in Temperature (\U00B0 F)");
 plot(plot3);
 ```
+
+Text at the end of the document.

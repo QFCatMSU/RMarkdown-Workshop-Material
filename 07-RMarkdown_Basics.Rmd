@@ -17,14 +17,14 @@ output:
 ## Now, we really get into Rmarkdown! 
 
 ### Headers
-For simplicity (and accessibility) in RMD, it is best to use the header structure.  You can create headers in your document by using the number sign (\#).  The number of number signs give the header number -- you can use H1 (\#) through H6 (\######).  
+For simplicity (and accessibility) in RMarkdown, it is best to use the header structure.  You can create headers in your document by using the number sign (\#).  The number of number signs give the header number -- you can use H1 (\#) through H6 (\######).  
 
 ### Bold and italics
 
-**Bold** uses two asteris and *italics* use one asterisjx (\*).   And, yes, we can combine ***bold and italics*** using three asterisks!
+**Bold** uses two asterisks and *italics* use one asterisk (\*).   And, yes, we can combine ***bold and italics*** using three asterisks!
 
 ### Escape characters
- What happens when you want to actualy print out an command character instead of running the command?  You have already seen me use these above. WE used what are called **escape character**, which, in Rmarkdown, is a backslash.  And you can even escape a backslash with another backslash \\\\\\.  See!  6 consecutive backslashes prints out 3 backslashes.
+What happens when you want print out an command character instead of running the command?  You have already seen me use these above. We used an **escape character**, which in Rmarkdown is a backslash (\\).  And you can even escape a backslash with another backslash \\\\\\ -- 6 consecutive backslashes prints out 3 backslashes.
 
 ### Lists
 1) Well RMD tries to manage your lists
@@ -50,6 +50,17 @@ E = m~r~c^2^: Energy of rest mass
 
 But, if you want to do formula more complicated than that, then you need LaTeX (or MathML)
 
+## Advanced topics
+
+### Greek Letters (using LaTeX)
+alpha: $\alpha$  
+beta: $\beta$  
+gamma: $\gamma$  
+
+### Add color to your text  
+This <span style="color:blue;"> is blue only </span> in HTML  
+This \textcolor{red}{is red only} in PDF
+
 ```{r echo=FALSE, fig.height=3, fig.width=4, fig.align="left"}
 plot(plot1);
 ```
@@ -60,17 +71,9 @@ Boxplot for change in temperature by the prevailing wind direction
 plot(plot2);
 ```
 
-Boxplots facetting by the strength and direction of the wind
+Boxplots faceting by the strength and direction of the wind
 
 ```{r echo=FALSE, fig.height=3, fig.width=4.5, fig.align="center"}
 plot(plot3);
 ```
 
-### Greek Letters (using LaTeX)
-alpha: $\alpha$  
-beta: $\beta$  
-gamma: $\gamma$  
-
-### Add color to your text  
-This <span style="color:blue;"> is blue only </span> in HTML  
-This \textcolor{red}{is red only} in PDF

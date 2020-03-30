@@ -5,26 +5,20 @@ date: "3/25/2020"
 output: pdf_document
 ---
 
-But RMD is not the most convienient place to develop and debug code, so here we will just read in all the code from another script file
+But RMD is not the most convenient place to develop and debug code, so here we will read in all the code from another script file
 
 ```{r echo=FALSE,code = readLines("scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' } 
-# execute the script but suppress all output
-# basically this puts the script in memory so it can used later
+# execute the script but suppresses all output
+# basically this puts the script in memory (i.e., the Environment) so it can be used later
 ```
 
 <!--```{r echo=FALSE,warning=FALSE, message=FALSE, results="hide", fig.show='hide',code = readLines("https://raw.githubusercontent.com/QFCatMSU/RMarkdown-Workshop-Material/master/scripts/01-WindsAndTemps.R"),  }
-# execute the script but suppress all output
-# basically this puts the script in memory so it can used later
+# Use if above does not work...
 ```-->
 
 A Histogram of the change in temperature for the 366 days.  
-If you still want to view the code in the output file then  you need to use the r block
-
-```{r echo=TRUE}
-  #### Plot the histogram of the change in temperature
-  plot1 = hist(changeTemp,
-               main = "Daily change of average temperatures",
-               xlab = "Change in Temperature (Fahrenheit)");
+```{r echo=FALSE}
+  plot(plot1);
 ```
 
 Boxplot for change in temperature by the prevailing wind direction.
@@ -33,8 +27,17 @@ Boxplot for change in temperature by the prevailing wind direction.
   plot(plot2);
 ```
 
-Boxplots facetting by the strength and direction of the wind
+Boxplots faceting by the strength and direction of the wind
 
 ```{r echo=FALSE}
   plot(plot3);
+```
+
+If you want the code in the output file then you need to copy the code into the r block and set echo=TRUE
+
+```{r echo=TRUE}
+  #### Plot the histogram of the change in temperature
+  plot1 = hist(changeTemp,
+               main = "Daily change of average temperatures",
+               xlab = "Change in Temperature (Fahrenheit)");
 ```

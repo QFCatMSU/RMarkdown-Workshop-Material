@@ -4,7 +4,6 @@ author: "Charlie"
 date: "3/25/2020"
 output: pdf_document
 urlcolor: red
-textcolor: blue
 ---
 
 ```{r echo=FALSE,code = readLines("scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' } 
@@ -14,32 +13,33 @@ textcolor: blue
 ```-->
 
 ## Images and Figures
-Link to [Figure 2](#anchor2)  
-Within a page, you can only link to a header
-Link to [QFC Website](https://www.canr.msu.edu/qfc/)  
 
-Here is an image.  If you put text in the bracets, it sometimes converts the text to a caption.  
-<!-- ![](images/QFCLogo.PNG) -->
+### Hyperlinks
+1) In-page hyperlink to [Figure 2](#anchor2)
+    * Within a page, you can only link to a header that has an anchor: {#***anchorName***}
+    * And, it is still pretty awkward...
+2) Hyperlink to [QFC Website](https://www.canr.msu.edu/qfc/)
+
+### Images
+Here is an image.  If you put text in the brackets, it will sometimes convert the text to a caption.  
 ![](images/QFCLogo.png)
-
-### Inline Code
 
 
 ## Figures
 
-### {#anchor1}
+### {#anchor1}  
 ```{r echo=FALSE}
 plot(plot1)
 ```
 
 Boxplot for change in temperature by the prevailing wind direction
 
-### {#anchor2}
-```{r echo=FALSE}
+### {#anchor2} 
+```{r echo=FALSE, fig.height=3}
 plot(plot2)
 ```
 
-Boxplots facetting by the strength and direction of the wind
+Boxplots faceting by the strength and direction of the wind
 
 ### {#anchor3}
 ```{r echo=FALSE}

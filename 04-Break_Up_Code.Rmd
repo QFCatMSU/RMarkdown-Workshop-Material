@@ -9,7 +9,15 @@ output:
   word_document: default
 ---
 
-Now let's break up the code in RMD... Note: you should keep an extra line between the document text and the code -- otherwise spacing can get weird... 
+Now let's break up the code...
+The code is exactly the same as the last example -- just broken into sections.
+Note: you should have a buffer line between the document text and the code -- otherwise spacing can get weird in the output. 
+
+<!-- This is a comment section and will not display in the document
+echo = TRUE: output code in document (default)  
+echo = FALSE: hide code in output  
+eval = TRUE: execute code (default)  
+eval = FALSE: do not execute code -- often used in tutorials  -->
 
 ```{r echo=FALSE}
 ### Local links -- work if in RStudio Project
@@ -36,7 +44,7 @@ for(day in 2:nrow(weatherData))
 weatherData$changeTemp = changeTemp;  # save vector as column in data frame
 ```
 
-A Histogram of the change in temperature for the 366 days
+A Histogram of the change in temperature for the 366 days -- keep the code in the output
 
 ```{r echo=TRUE}
 #### Plot the histogram of the change in temperature
@@ -45,7 +53,7 @@ plot1 = hist(changeTemp,
              xlab = "Change in Temperature (Fahrenheit)");
 ```
 
-<!-- Hey, this is a comment in Rmd -->
+The next code section will neither display nor execute because eval and echo are both set to FALSE. This text is just a placeholder for where the summary stats and wind directions would be.
 
 ```{r echo=FALSE, eval=FALSE}
 #### Get some statistics on the change in tempeature values
@@ -66,14 +74,14 @@ plot2 = ggplot(data=weatherData) +
                na.rm=TRUE) +
   theme_bw() +
   scale_x_discrete(limits=c("North", "East", "South", "West")) +
-  labs(title = "Change in Temperature by Prevaling Wind Direction",
+  labs(title = "Change in Temperature by Prevailing Wind Direction",
        subtitle = "Lansing, Michigan: 2016",
        x = "Wind Direction",
        y = "Change in Temperature (\U00B0 F)");
 plot(plot2);
 ```
 
-Boxplots facetting by the strength and direction of the wind
+Boxplots faceting by the strength and direction of the wind
 
 ```{r echo=FALSE}
 plot3 = ggplot(data=weatherData) +
@@ -92,4 +100,4 @@ plot3 = ggplot(data=weatherData) +
 plot(plot3);
 ```
 
-While there is convenience in breaking up code in RMD, the big issue is that it is harder to develop and debug code in RMD -- we will take care of that in the next example.
+While breaking up code can make development a little more convenient in Rmd, the reality is the Rmd is not an ideal place for R development.  We will take care of that in the next example.
