@@ -1,0 +1,77 @@
+---
+title: "WindsAndTemps"
+author: "Charlie"
+date: "3/25/2020"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r echo=FALSE,code = readLines("scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' } 
+```
+
+
+## Now, we really get into Rmarkdown! 
+
+### Headers
+For simplicity (and accessibility) in RMarkdown, it is best to use the header structure.  You can create headers in your document by using the number sign (\#).  The number of number signs give the header number -- you can use H1 (\#) through H6 (\######).  
+
+### Bold and italics
+
+**Bold** uses two asterisks and *italics* use one asterisk (\*).   And, yes, we can combine ***bold and italics*** using three asterisks!
+
+### Escape characters
+What happens when you want print out an command character instead of running the command?  You have already seen me use these above. We used an **escape character**, which in Rmarkdown is a backslash (\\).  And you can even escape a backslash with another backslash \\\\\\ -- 6 consecutive backslashes prints out 3 backslashes.
+
+### Lists
+1) Well RMD tries to manage your lists
+    a) it is not robust
+    b) and not always pretty
+2) But in a pinch
+    * it tends to work
+    * You just have to remember to indent each level by 4 spaces
+         * A third level... 8 spaces over
+    * Notice that unordered lists use the same symbol as italics but without an end asterisk -- that can be awkward!
+
+### Tables
+| RMD   | is Good | For Quick | And Dirty  | Tables |
+|------:|:--------|:---------:|------------|--------|
+|But it | is      | limited   |in        |functionality|
+| So| keep || it | simple! |
+|Pipes | set | the | columns | and|
+|dashes | and colons | set the | header and | alignment |
+
+### Subscript and superscripts
+Subscript uses tildes (\~) and superscripts use carrots (\^)  
+E = m~r~c^2^: Energy of rest mass  
+
+But, if you want to do formula more complicated than that, then you need LaTeX (or MathML)
+
+## Advanced topics
+
+### Greek Letters (using LaTeX)
+alpha: $\alpha$  
+beta: $\beta$  
+gamma: $\gamma$  
+
+### Add color to your text  
+This <span style="color:blue;"> is blue only </span> in HTML  
+This \textcolor{red}{is red only} in PDF
+
+```{r echo=FALSE, fig.height=3, fig.width=4, fig.align="left"}
+plot(plot1);
+```
+
+Boxplot for change in temperature by the prevailing wind direction
+
+```{r echo=FALSE, fig.height=4.5, fig.width=5, fig.align="right"}
+plot(plot2);
+```
+
+Boxplots faceting by the strength and direction of the wind
+
+```{r echo=FALSE, fig.height=3, fig.width=4.5, fig.align="center"}
+plot(plot3);
+```
+
