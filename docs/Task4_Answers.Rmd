@@ -1,0 +1,43 @@
+---
+title: "WindsAndTemps"
+author: "Charlie"
+date: "3/25/2020"
+output: pdf_document
+---
+
+<!-- Since I moved this Rmd file down one directory (to the docs folder), 
+     I need to redo my file links and set the root directory in Rmd -->
+     
+<!-- This sets the root directory to the parent folder --
+     The parent of docs is the root folder for this RStudio Project --> 
+```{r setup}
+knitr::opts_knit$set(root.dir = '../')
+```
+
+<!-- Changed scripts/01-WindsAndTemps.R to ../scripts/01-WindsAndTemps.R,
+     which mean go back to folder folder and then go into the scripts folder -->
+```{r echo=FALSE,code = readLines("../scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' } 
+```
+
+## Answers from Task 4
+
+### Information about `avgTemp`
+
+The highest average temperature for 2016 in Lansing was `r max(avgTemp);` on `r maxIndex = which.max(avgTemp); weatherData$date[maxIndex];`, the lowest average temperature was `r min(avgTemp);`  on `r minIndex = which.min(avgTemp); weatherData$date[minIndex];`, and the average of all average temperatures was `r mean(avgTemp);` with the median average temperature being `r median(avgTemp);`.
+
+#### Same paragraph using Celsius temperatures:  
+The highest average temperature for 2016 in Lansing was `r (5/9) * (max(avgTemp)-32);` on `r maxIndex = which.max(avgTemp); weatherData$date[maxIndex];`, the lowest average temperature was `r (5/9) * (min(avgTemp)-32);`  on `r minIndex = which.min(avgTemp); weatherData$date[minIndex];`, and the average of all average temperatures was `r (5/9) * (mean(avgTemp)-32);` with the median average temperature being `r (5/9) * (median(avgTemp)-32)`.
+
+#### Same paragraph using Celsius temperatures and 3 significant digits:  
+The highest average temperature for 2016 in Lansing was `r signif((5/9) * (max(avgTemp)-32), 3);` on `r maxIndex = which.max(avgTemp); weatherData$date[maxIndex];`, the lowest average temperature was `r signif((5/9) * (min(avgTemp)-32), 3);`  on `r minIndex = which.min(avgTemp); weatherData$date[minIndex];`, and the average of all average temperatures was `r signif((5/9) * (mean(avgTemp)-32), 3);` with the median average temperature being `r signif((5/9) * (median(avgTemp)-32), 3)`.
+
+### Table of weather data: 
+<!-- Set this up for easier access in the table -->
+`r minIndex = which.min(avgTemp); rmaxIndex = which.max(avgTemp);`
+
+|     |Temp | Date | Humidity | Wind Speed (average) | Prevailing Wind Direction |
+|-|:-:|:-:|:-:|:-:|:-:|
+|minimum | `r avgTemp[minIndex]` | `r weatherData$date[minIndex]` | `r weatherData$relHum[minIndex]` | `r weatherData$windSpeed[minIndex]` | `r weatherData$windDir[minIndex]` |
+|maximum | `r avgTemp[maxIndex]` | `r weatherData$date[maxIndex]` | `r weatherData$relHum[maxIndex]` | `r weatherData$windSpeed[maxIndex]` | `r weatherData$windDir[maxIndex]` |
+
+

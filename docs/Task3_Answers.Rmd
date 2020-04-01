@@ -8,8 +8,55 @@ output:
     df_print: paged
 ---
 
-```{r echo=FALSE,code = readLines("scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' } 
+<!-- Since I moved this Rmd file down one directory (to the docs folder), 
+     I need to redo my file links and set the root directory in Rmd -->
+     
+<!-- This sets the root directory to the parent folder --
+     The parent of docs is the root folder for this RStudio Project --> 
+```{r setup}
+knitr::opts_knit$set(root.dir = '../')
 ```
+
+<!-- Changed scripts/01-WindsAndTemps.R to ../scripts/01-WindsAndTemps.R,
+     which mean go back to folder folder and then go into the scripts folder -->
+```{r echo=FALSE,code = readLines("../scripts/01-WindsAndTemps.R"), warning=FALSE, message=FALSE, results="hide", fig.show='hide' } 
+```
+
+### Task 3 Answers
+Note: level 4 headers are inline headers in many documents
+
+#### 3x4 Table with bolded and italicized values
+| a     | perfectly   | boring  | table |
+|-------|-------------|---------|-------|
+|Hi, I am **bold**  | ***and I am bold and italics*** | X~2~ | x^2^ |
+|Note that | pipe | positioning | does not matter |
+|But the | number | of pipes | does|
+
+
+#### Another list
+
+1) My favorite animals
+    a) Llamas
+    b) Piping Plovers
+    c) Guanacos
+        * Yeah, guanacos and llamas are very similar, so that is kind of cheating
+2) My favorite foods
+    a) Schezwan
+    b) Soup
+    c) Middleeastern
+3) My favorite Movies
+    * I cannot think right now about this 
+    * But, you get the point of lists
+        * Right?
+    
+#### Print weird characters
+
+\*\\\\\* \$\^\& 
+
+#### Print formulas
+
+V~cyl~ = $\pi$r^2^h  
+Anything more complicated really required LaTeX or MathML
 
 
 ## Now, we really get into Rmarkdown! 
