@@ -2,7 +2,10 @@
 title: "WindsAndTemps"
 author: "Charlie"
 date: "3/25/2020"
-output: pdf_document
+output:
+  word_document: default
+  html_document:
+    df_print: paged
 ---
 
 Let's add some text to beginning of this document and remove the code from the output using echo=FALSE. This removes the code but not the plots or the Console output. 

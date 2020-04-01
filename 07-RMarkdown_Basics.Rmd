@@ -40,7 +40,7 @@ What happens when you want print out an command character instead of running the
 | RMD   | is Good | For Quick | And Dirty  | Tables |
 |------:|:--------|:---------:|------------|--------|
 |But it | is      | limited   |in        |functionality|
-| So| keep || it | simple! |
+| So    |   keep  |           | it         | simple! |
 |Pipes | set | the | columns | and|
 |dashes | and colons | set the | header and | alignment |
 

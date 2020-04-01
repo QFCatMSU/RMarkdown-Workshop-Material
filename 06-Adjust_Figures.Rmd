@@ -30,6 +30,6 @@ plot(plot2);
 
 Boxplots faceting by the strength and direction of the wind
 
-```{r echo=FALSE, fig.height=3, fig.width=4.5, fig.align="center"}
+```{r echo=FALSE, fig.height=3, fig.width=2, fig.align="center"}
 plot(plot3);
 ```
