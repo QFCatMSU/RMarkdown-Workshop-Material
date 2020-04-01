@@ -1,5 +1,7 @@
 # RMarkdown Workshop Material
 
+The material here is designed to be run as an RStudio Project
+
 This contains all of the documents, scripts, and data used in the RMarkdown workshop including:
 - Powerpoint presentation (docs folder)
 - 4 tasks and answers to the tasks (docs folder)
