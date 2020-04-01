@@ -8,7 +8,7 @@ This contains all of the documents, scripts, and data used in the RMarkdown work
 
 To execute the scripts:
 - Make sure you have recent versions of R (3.6+) and RStudio (1.2+) onyour computer
-- Click Clone or Download --> Download Zip
+- Click Clone or Download -> Download Zip
 - Unzip the folder to your computer
 - double-click on RMarkdown-Workshop-Material.RProj
 - futher instructions in the powerpoint and task files
