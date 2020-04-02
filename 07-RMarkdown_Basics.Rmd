@@ -57,7 +57,7 @@ alpha: $\alpha$
 beta: $\beta$  
 gamma: $\gamma$  
 
-### Add color to your text  
+### Add color to your text -- line 62 might cause an TeX error -- you can delete it
 This <span style="color:blue;"> is blue only </span> in HTML  
 This \textcolor{red}{is red only} in PDF
 
